@@ -1,36 +1,5 @@
 package org.example;
 
-public class Main {
-    public static void main(String[] args) {
-
-
-}
-}
-
-
-class RobotConnectionException extends RuntimeException {
-    public RobotConnectionException(String message) {
-        super(message);
-    }
-
-    public RobotConnectionException(String message, Throwable cause) {
-        super(message, cause);
-    }
-}
-
-
-    interface RobotConnection extends AutoCloseable {
-        void moveRobotTo(int x, int y);
-        @Override
-        void close();
-    }
-
-
-    interface RobotConnectionManager {
-        RobotConnection getConnection();
-    }
-
-
 class Solution {
     public static void moveRobot(RobotConnectionManager robotConnectionManager, int toX, int toY) {
         RobotConnection robot = null;
